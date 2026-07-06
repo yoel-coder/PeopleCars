@@ -2,8 +2,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import PersonRow from "../PersonRow";
-
-
+import DeleteCars from "./DeleteCars";
+import withRouter from "../components/withRouter";
 
 
 
@@ -26,14 +26,6 @@ loadPeople = async() => {
     };
 clearSearch = (e) => {
     this.setState({ searchpeople: [], isSearching: false , SearchTerm: ''});
-}
-deleteCars = async (id )=> {
-    await axios.post(`/api/PeopleCars/DeleteCars?Id=${id}`);
-    this.loadPeople();
-}
-addCar = (id) => {
-    
-    <Link to={`/AddCar${id}`}></Link>
 }
 onSearchChange = (e) => {
     this.setState({ isSearching: true });
@@ -59,7 +51,7 @@ render() {
        <tr>
         <td>First Name</td>
         <td>Last Name</td>
-        <td>Age</td>S
+        <td>Age</td>
         <td>Car Count</td>
         <td>Add Car</td>
         <td> Delete Cars</td>
@@ -68,7 +60,7 @@ render() {
      <tbody>
    {(this.state.isSearching ? this.state.searchpeople : this.state.people).map(p => (
         <PersonRow key={p.id} Person={p}
-            onDeleteClick={() => this.deleteCars(p.id)} onAddClick={() => this.addCar(p.id)} />
+ />
     ))}
     </tbody>
             </table>
@@ -78,7 +70,7 @@ render() {
 );
 }}
 
-export default PeopleTable
+export default withRouter(PeopleTable); 
 
 
 

@@ -13,8 +13,9 @@ return(
 <td>{age}</td>
 <td>{carsCount}</td>
 <td><Link to={`/add-car/${id}`}>
- <button onClick={onAddClick} className="btn btn-primary">AddCar</button></Link></td>
-<td><button onClick={onDeleteClick} className="btn btn-danger">Delete Cars</button></td>
+
+ <button  className="btn btn-primary">AddCar</button></Link></td>
+<td><Link to={`/DeleteCars/${id}`}><button onClick={onDeleteClick} className="btn btn-danger">Delete Cars</button></Link></td>
 </tr>
 
 

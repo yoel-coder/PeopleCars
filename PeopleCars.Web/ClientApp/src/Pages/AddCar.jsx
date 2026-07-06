@@ -25,7 +25,7 @@ class AddCar extends React.Component {
   onTextChange = (e) => {
     const car = { ...this.state.car };
     car[e.target.name] = e.target.value;
-    this.setState({ car });
+    this.setState({ car:car });
   }
     onAddClick = async () => {
         

@@ -48,5 +48,13 @@ namespace PeopleCars.Web.Controllers
             var repo = new PeoplecarsRespository(_connectionstring);
             return repo.GetPersonById(Id);
         }
+        [Route("GetCarByPerson")]
+        [HttpGet]
+        public List<Car> GetCarsForPerson(int id)
+        {
+            var repo = new PeoplecarsRespository(_connectionstring);
+            return repo.GetCarsForPerson(id);
+
+        }
     }
 }

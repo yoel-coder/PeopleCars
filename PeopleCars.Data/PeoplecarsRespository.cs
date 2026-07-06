@@ -50,5 +50,12 @@ namespace PeopleCars.Data
             db.Cars.Add(car);
             db.SaveChanges();
         }
+        public List<Car> GetCarsForPerson(int id)
+        {
+            var db = new yesDataContext (_connectionString);
+            return db.Cars.Where(c=>c.PersonId == id).ToList();
+
+
+        }
     }
 }

@@ -59,7 +59,7 @@ render() {
        <tr>
         <td>First Name</td>
         <td>Last Name</td>
-        <td>Age</td>S
+        <td>Age</td>
         <td>Car Count</td>
         <td>Add Car</td>
         <td> Delete Cars</td>

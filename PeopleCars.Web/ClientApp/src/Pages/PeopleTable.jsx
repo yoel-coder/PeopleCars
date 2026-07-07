@@ -24,7 +24,7 @@ loadPeople = async() => {
 
         
     };
-clearSearch = (e) => {
+clearSearch = () => {
     this.setState({ searchpeople: [], isSearching: false , SearchTerm: ''});
 }
 onSearchChange = (e) => {
@@ -42,7 +42,8 @@ render() {
         
         <div className="container mt-5">
             <p style={{ marginTop: '100px' }}></p>
-            <input type="text" className="form-control" value={this.state.SearchTerm} placeholder="Search..." onChange={this.onSearchChange} />
+            <input type="text" className="form-control" value={this.state.SearchTerm}
+             placeholder="Search..." onChange={this.onSearchChange} />
             <button className="btn btn-secondary" onClick={this.clearSearch}>Clear Search</button>
             <button className="btn btn-primary"><Link to="/add-person" className="text-light">Add Person</Link></button>
             <div className="row">
